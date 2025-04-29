@@ -12,8 +12,11 @@
     "check": "prettier --check \"**/*.{ts,tsx,js,jsx,css}\""
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{css,json,md}": [
       "prettier --write"
     ]
   },
