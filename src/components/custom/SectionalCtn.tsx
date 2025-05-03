@@ -53,7 +53,7 @@ export const Section = ({
     >
       <motion.div
         variants={itemVariants}
-        className='flex items-center justify-center h-[300px] md:h-[400px] lg:h-full w-full lg:w-1/2 rounded-2xl backdrop-blur-sm'
+        className='flex items-center justify-center h-[300px] md:h-[400px] lg:h-full w-full lg:w-1/2 rounded-[8px] md:rounded-2xl backdrop-blur-sm'
       >
         {animation}
       </motion.div>
