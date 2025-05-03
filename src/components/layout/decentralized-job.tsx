@@ -4,10 +4,9 @@ export const DecentralizedJob = () => {
   return (
     <div className='px-5 md:px-6'>
       <Section
-        title='On-Chain Verified Organizations'
-        subtitle="Get hired companies that are verified on credenza. Only authenticated organizations can issue credentials or post jobs, so you know you're dealing with legit entities."
+        title='Decentralized Job Marketplace'
+        subtitle='Skip the middleman—get hired through trustless matching. Smart contracts match verified talent with real job postings, creating a fair, transparent, and efficient hiring process.'
         animation={<></>}
-        isRowReverse={true}
       />
     </div>
   )

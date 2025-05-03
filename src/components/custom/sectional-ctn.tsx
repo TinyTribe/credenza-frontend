@@ -25,7 +25,7 @@ export const Section = ({
 
       <div
         className={`flex flex-col gap-3 md:gap-6 justify-center w-full lg:w-1/2 rounded-2xl backdrop-blur-sm bg-white px-4 md:px-8 lg:px-12 py-4 md:py-8 ${
-          !isRowReverse ? 'text-left lg:text-right' : ''
+          isRowReverse ? 'text-left lg:text-right' : ''
         }`}
       >
         <h1 className='text-2xl md:text-4xl lg:text-[64px] tracking-[-1.28px] font-bold text-[#020717]'>
