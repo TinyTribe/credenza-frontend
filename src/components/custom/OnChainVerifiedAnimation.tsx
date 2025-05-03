@@ -88,7 +88,7 @@ export const OnChainVerifiedAnimation = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
-            className='px-5 md:px-10 flex gap-2 md:gap-[15px] items-center justify-center rounded-[10px] md:rounded-[20px] border border-[#FFE8C7] bg-[rgba(255,255,255,0.32)] backdrop-blur-sm shadow-[5px_9px_20.9px_0px_rgba(0,0,0,0.05)] w-[180px] md:w-[360px] h-[62px] md:h-[124px]'
+            className='px-5 md:px-10 flex gap-2 md:gap-[15px] items-center justify-center rounded-[10px] md:rounded-[20px] border border-[#FFE8C7] bg-[rgba(255,255,255,0.32)] backdrop-blur-sm shadow-[5px_9px_20.9px_0px_rgba(0,0,0,0.05)] w-[180px] md:w-[360px] h-[62px] md:h-[124px] transition-all duration-300 hover:bg-[rgba(255,255,255,0.5)] hover:shadow-lg hover:scale-105'
           >
             <div className='flex items-center'>
               <AnimatePresence mode='wait'>
