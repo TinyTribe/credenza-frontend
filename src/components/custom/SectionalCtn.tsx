@@ -49,11 +49,11 @@ export const Section = ({
       initial='hidden'
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className={`max-w-[1392px] w-full mx-auto flex flex-col ${isReversed} gap-4 lg:gap-2 lg:h-[690px]`}
+      className={`max-w-[1392px] w-full mx-auto flex flex-col ${isReversed} gap-4 lg:gap-2 lg:h-[650px]`}
     >
       <motion.div
         variants={itemVariants}
-        className='flex items-center justify-center h-[300px] md:h-[400px] lg:h-full w-full lg:w-1/2 rounded-[8px] md:rounded-2xl backdrop-blur-sm'
+        className='flex items-center justify-center h-[350px] md:h-[400px] lg:h-full w-full lg:w-1/2 rounded-[8px] md:rounded-2xl backdrop-blur-sm'
       >
         {animation}
       </motion.div>
