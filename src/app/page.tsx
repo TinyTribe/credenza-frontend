@@ -1,5 +1,5 @@
-import { DecentralizedJob } from '@/components/layout/decentralized-job'
-import { OnChainVerified } from '@/components/layout/on-chain-verified'
+import { DecentralizedJob } from '@/components/layout/DecentralizedJob'
+import { OnChainVerified } from '@/components/layout/OnChainVerified'
 import React from 'react'
 
 const Home = () => {

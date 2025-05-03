@@ -1,4 +1,4 @@
-import { Section } from '../custom/sectional-ctn'
+import { Section } from '../custom/SectionalCtn'
 
 export const OnChainVerified = () => {
   return (
