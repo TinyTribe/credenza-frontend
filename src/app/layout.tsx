@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 })
 
 const satoshi = localFont({
-  src: './Satoshi-Variable.ttf',
+  src: '../fonts/Satoshi-Variable.ttf',
 })
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={satoshi.className}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` bg-[#F4F4F4] ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
