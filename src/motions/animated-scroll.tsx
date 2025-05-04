@@ -2,9 +2,9 @@
 import Slider from 'react-slick'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { LogoIcon } from '../icon'
+import { LogoIcon } from '@/components/ui/icons/icons'
 const IconCarousel = () => {
-  const [current, setCurrent] = useState(1)
+  const [current, setCurrent] = useState(0)
 
   const icons = [0, 1, 2, 3, 4, 5]
 
@@ -13,7 +13,7 @@ const IconCarousel = () => {
     slidesToShow: 5,
     speed: 500,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     centerMode: true,
     arrows: false,
     centerPadding: '0px',
@@ -43,7 +43,7 @@ const IconCarousel = () => {
                   }
                 >
                   <LogoIcon
-                    className='w-6 h-6'
+                    className='w-4 h-4 md:w-6 md:h-6'
                     fill={isActive ? 'white' : 'gray'}
                   />
                 </motion.div>

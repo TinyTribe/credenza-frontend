@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import { CheckIcon, CheckMobileIcon } from '../icons/icons'
+import { CheckIcon, CheckMobileIcon } from '../components/ui/icons/icons'
 
 export const OnChainVerifiedAnimation = () => {
   const companies = ['Google', 'Microsoft', 'Starknet', 'Amazon', 'Meta']
