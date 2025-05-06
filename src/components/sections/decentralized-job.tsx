@@ -1,5 +1,5 @@
 import { DecentralizedJobAnimation } from '../../motions/decentralized-job-animation'
-import { Section } from '../ssectional-ctn'
+import { Section } from '../sectional-ctn'
 
 export const DecentralizedJob = () => {
   return (

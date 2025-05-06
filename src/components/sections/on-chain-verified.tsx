@@ -1,5 +1,5 @@
 import { OnChainVerifiedAnimation } from '../../motions/onchain-verified-animation'
-import { Section } from '../ssectional-ctn'
+import { Section } from '../sectional-ctn'
 
 export const OnChainVerified = () => {
   return (
