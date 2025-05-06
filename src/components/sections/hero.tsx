@@ -124,7 +124,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.02 }}
           >
             <Image
-              src='/orange-bg.png'
+              src='/orange-bg.svg'
               alt='Person'
               width={203}
               height={242}
