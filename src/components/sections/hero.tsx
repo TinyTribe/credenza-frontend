@@ -1,15 +1,15 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import IconCarousel from '@/motions/animated-scroll'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import {
   containerVariants,
-  itemVariants,
   floatingAnimation,
+  itemVariants,
   rotatingFloatingAnimation,
 } from '@/motions/variants'
 
@@ -17,9 +17,8 @@ export function HeroSection() {
   return (
     <section className='w-full px-4 md:px-8 lg:px-16 py-12 md:py-20 bg-white rounded-2xl'>
       <div className='max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between'>
-        {/* Left Content */}
         <motion.div
-          className='w-full lg:w-[45%] xl:w-1/2 mb-12 md:mb-0 pr-0 md:pr-8'
+          className='w-full lg:w-[45%] xl:w-1/2 max-md:mb-0 mb-12 md:mb-0 pr-0 md:pr-8'
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -43,7 +42,7 @@ export function HeroSection() {
             secure, intermediary-free experience!
           </motion.p>
           <motion.div
-            className='flex gap-2 md:gap-4'
+            className='flex max-[375px]:flex-col gap-2 md:gap-4'
             initial='hidden'
             animate='visible'
             variants={itemVariants}
@@ -66,14 +65,12 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Right Content */}
         <motion.div
           className='w-full lg:w-1/2 max-w-[533px] aspect-square relative min-h-[310px] sm:min-h-[400px] xl:min-h-[520px] mx-auto'
           variants={containerVariants}
           initial='hidden'
           animate='visible'
         >
-          {/* Decorative floating shapes */}
           <motion.div
             className='absolute top-[10%] right-[15%] w-4 h-4 rounded-full bg-[#84b5ff]'
             animate={floatingAnimation}
@@ -124,7 +121,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.02 }}
           >
             <Image
-              src='/orange-bg.png'
+              src='/orange-bg.svg'
               alt='Person'
               width={203}
               height={242}
