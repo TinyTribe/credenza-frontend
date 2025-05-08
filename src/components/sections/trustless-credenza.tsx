@@ -94,24 +94,24 @@ export const TrustlessCredenza = () => {
       initial='hidden'
       animate={isInView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='w-full flex max-lg:flex-col gap-4 xl:gap-[73px] bg-white pl-16 pr-6 rounded-[8px] md:rounded-2xl'
+      className='w-full flex max-lg:flex-col-reverse gap-[13px] xl:gap-[73px] bg-white xl:pl-6 2xl:pl-16 lg:pr-6 rounded-2xl'
       whileInView={{ boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.08)' }}
       transition={{ duration: 0.8 }}
     >
       <motion.div
         variants={contentContainerVariants}
-        className={`flex flex-col gap-3 md:gap-6 justify-center max-w-[608px] w-full py-[50px]`}
+        className={`flex flex-col gap-3 md:gap-6 justify-center max-w-full lg:max-w-[608px] w-full px-4 md:p-6  pb-7.5 xl:py-[50px]`}
       >
         <div className='flex flex-col gap-3'>
           <motion.h1
             variants={itemVariants}
-            className='text-2xl md:text-4xl lg:text-[64px] tracking-[-1.28px] font-bold text-[#020717] max-md:leading-[36px]'
+            className='text-2xl md:text-4xl lg:text-[64px] xl:tracking-[-1.28px] font-bold text-[#020717] max-md:leading-[36px]'
           >
             Trustless Credenza Ecosystem
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className='text-sm md:text-xl text-[#747C88] leading-6 md:leading-7.5 font-normal max-md:pb-2 max-md:tracking-[0.28px]'
+            className='text-sm md:text-xl text-[#747C88] leading-6 md:leading-7.5 font-normal max-md:tracking-[0.28px]'
           >
             Credenza creates a direct connection between credential issuers and
             talents, removing intermediaries and ensuring authenticity through
@@ -119,10 +119,13 @@ export const TrustlessCredenza = () => {
           </motion.p>
         </div>
 
-        <motion.ul className='flex flex-col gap-6' variants={containerVariants}>
+        <motion.ul
+          className='flex flex-col gap-3 md:gap-6'
+          variants={containerVariants}
+        >
           <motion.li
             variants={listItemVariants}
-            className='flex gap-3 items-center font-medium text-[#3E4146] text-[20px] leading-7'
+            className='flex gap-3 items-center font-medium text-[#3E4146] text-sm md:text-[20px] leading-6 md:leading-7 max-sm:tracking-[0.28px]'
             custom={0}
           >
             <motion.span
@@ -135,7 +138,7 @@ export const TrustlessCredenza = () => {
           </motion.li>
           <motion.li
             variants={listItemVariants}
-            className='flex gap-3 items-center font-medium text-[#3E4146] text-[20px] leading-7'
+            className='flex gap-3 items-center font-medium text-[#3E4146] text-sm md:text-[20px] leading-6 md:leading-7 max-sm:tracking-[0.28px]'
             custom={1}
           >
             <motion.span
@@ -148,7 +151,7 @@ export const TrustlessCredenza = () => {
           </motion.li>
           <motion.li
             variants={listItemVariants}
-            className='flex gap-3 items-center font-medium text-[#3E4146] text-[20px] leading-7'
+            className='flex gap-3 items-center font-medium text-[#3E4146] text-sm md:text-[20px] leading-6 md:leading-7 max-sm:tracking-[0.28px]'
             custom={2}
           >
             <motion.span
@@ -164,18 +167,18 @@ export const TrustlessCredenza = () => {
 
       <motion.div
         variants={imageContainerVariants}
-        className='relative rounded-[6.7px] md:rounded-[12px] py-6'
+        className='relative rounded-[7px] md:rounded-[12px] lg:py-6 w-full h-[265px] md:h-[400px] lg:h-full lg:my-auto overflow-hidden'
       >
         <Image
           src='/job.svg'
           alt='Job offer'
           width={623}
           height={471}
-          className='w-full h-full'
+          className='w-full h-[265px] md:h-[400px] lg:h-full rounded-t-2xl rounded-b-[6.7px] md:rounded-[12px] object-cover'
         />
         <motion.div
           variants={notificationVariants}
-          className='absolute top-1/2 left-[10%] -translate-y-1/2 inline-flex items-center justify-center gap-[10px] rounded-[5px] border border-white/25 bg-white/25 px-[14px] py-[12px] backdrop-blur-[2.5px]'
+          className='absolute top-1/2 left-[10%] -translate-y-1/2 inline-flex items-center justify-center gap-2 md:gap-[10px] rounded-[2.8px] md:rounded-[5px] border border-white/25 md:border-white/25 bg-white/25 px-[7.8px] md:px-[14px] py-[6.7px] md:py-[12px] backdrop-blur-[1.4px] md:backdrop-blur-[2.5px]'
           whileHover={{
             scale: 1.05,
           }}
@@ -185,8 +188,11 @@ export const TrustlessCredenza = () => {
             alt='Notification Icon'
             width={24}
             height={24}
+            className='w-3.5 h-3.5 sm:w-6 sm:h-6'
           />
-          <TypewriterText text="You've got a job offer" />
+          <div className='text-white text-[9px] sm:text-base font-medium leading-[13.5px] sm:leading-[24px] tracking-[0.18px] sm:tracking-[0.32px]'>
+            <TypewriterText text="You've got a job offer" />
+          </div>
         </motion.div>
       </motion.div>
     </motion.div>

@@ -33,7 +33,7 @@ export const TypewriterText = ({
   }, [index, text, speed, delay])
 
   return (
-    <p className='text-white text-[16px] font-medium leading-[24px] tracking-[0.32px] whitespace-nowrap overflow-hidden'>
+    <p className='text-white whitespace-nowrap overflow-hidden'>
       {displayedText}
     </p>
   )
