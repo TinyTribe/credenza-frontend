@@ -25,7 +25,7 @@ export default function VerifiableNftAnimation() {
         alt='Wall layout'
         width={906}
         height={311}
-        className='absolute inset-0 w-full h-full'
+        className='absolute inset-0 w-full h-full sm:h-3/4 lg:h-full sm:my-auto sm:object-cover lg:object-contain'
       />
 
       <div className='absolute inset-0 flex items-center justify-center'>

@@ -120,7 +120,7 @@ export const Section = ({
       >
         <motion.h1
           variants={titleVariants}
-          className='text-2xl md:text-4xl lg:text-[64px] tracking-[-1.28px] font-bold text-[#020717]'
+          className='text-2xl md:text-4xl lg:text-[64px] xl:tracking-[-1.28px] font-bold text-[#020717]'
         >
           {title}
         </motion.h1>
