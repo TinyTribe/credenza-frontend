@@ -57,7 +57,7 @@ export const MultiPanelSection = () => {
 
     if (!isInView) return
 
-    const duration = 10000
+    const duration = 8000
     const updateInterval = 50
     const increment = updateInterval / duration
 
@@ -105,7 +105,7 @@ export const MultiPanelSection = () => {
         </AnimatePresence>
       </div>
 
-      <div className='lg:hidden mt-8 flex justify-center'>
+      <div className='lg:hidden mt-4 max-sm:max-w-[280px] mx-auto'>
         <ScrollIndicator
           sections={sections}
           activeIndex={activeIndex}

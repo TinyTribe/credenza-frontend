@@ -95,7 +95,7 @@ export const SectionPanel = ({
       initial='hidden'
       animate={isActive ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='w-full flex flex-col lg:flex-row gap-4 lg:gap-[50px] m-1'
+      className='w-full flex flex-col lg:flex-row gap-4 lg:gap-[50px] py-1'
       transition={{ duration: 1 }}
     >
       <motion.div
@@ -115,7 +115,7 @@ export const SectionPanel = ({
           sections={sections}
           activeIndex={activeIndex}
           progress={progress}
-          className='hidden lg:flex'
+          className='max-lg:hidden'
         />
 
         <motion.h1
