@@ -1,19 +1,15 @@
 import Navbar from '@/components/navbar'
-import { DecentralizedJob } from '@/components/sections/decentralized-job'
 import { HeroSection } from '@/components/sections/hero'
-import { OnChainVerified } from '@/components/sections/on-chain-verified'
-import { TrustlessCredenza } from '@/components/sections/trustless-credenza'
-import { VerifiableNft } from '@/components/sections/verifiable-nft'
+import { MultiPanelSection } from '@/components/sections/multi-panel-section'
 
 const Home = () => {
   return (
-    <div className='px-5 md:px-6 max-w-[1390px] mx-auto w-full flex flex-col gap-2 py-2'>
+    <div className='max-w-[1440px] mx-auto w-full'>
       <Navbar />
       <HeroSection />
-      <TrustlessCredenza />
-      <VerifiableNft />
-      <OnChainVerified />
-      <DecentralizedJob />
+      <div className='max-w-[1184px] mx-auto px-5 md:px-6 w-full flex flex-col gap-[200px] pt-[200px]'>
+        <MultiPanelSection />
+      </div>
     </div>
   )
 }
