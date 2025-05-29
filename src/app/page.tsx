@@ -1,6 +1,6 @@
-import Navbar from '@/components/navbar'
-import { HeroSection } from '@/components/sections/hero'
-import { MultiPanelSection } from '@/components/sections/multi-panel-section'
+import Navbar from '@/components/layout/navbar'
+import { HeroSection } from '@/components/layout/landing-page/hero'
+import { MultiPanelSection } from '@/components/layout/landing-page/multi-panel-section'
 
 const Home = () => {
   return (

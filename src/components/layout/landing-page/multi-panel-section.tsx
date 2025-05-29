@@ -5,8 +5,8 @@ import { OnChainVerifiedAnimation } from '@/motions/onchain-verified-animation'
 import VerifiableNftAnimation from '@/motions/verifiable-nft-animation'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
-import { ScrollIndicator } from '../scroll-indicator'
-import { SectionPanel } from '../sectional-panel'
+import { ScrollIndicator } from '../../custom/scroll-indicator'
+import { SectionPanel } from '../../custom/sectional-panel'
 
 interface SectionProps {
   id: string

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { sections } from './sections/multi-panel-section'
+import { sections } from '../layout/landing-page/multi-panel-section'
 
 interface ScrollIndicatorProps {
   sections: typeof sections

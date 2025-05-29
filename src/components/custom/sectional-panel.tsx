@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ScrollIndicator } from './scroll-indicator'
-import { sections } from './sections/multi-panel-section'
+import { sections } from '../layout/landing-page/multi-panel-section'
 
 interface SectionPanelProps {
   section: (typeof sections)[0]
