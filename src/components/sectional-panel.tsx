@@ -95,12 +95,12 @@ export const SectionPanel = ({
       initial='hidden'
       animate={isActive ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='w-full flex flex-col lg:flex-row gap-4 lg:gap-[50px] lg:h-[548px]'
+      className='w-full flex flex-col lg:flex-row gap-4 lg:gap-[50px] m-1'
       transition={{ duration: 1 }}
     >
       <motion.div
         variants={animationContainerVariants}
-        className='flex items-center justify-center h-[350px] md:h-[400px] lg:h-[548px] w-full lg:max-w-[692px] rounded-[8px] md:rounded-2xl backdrop-blur-sm'
+        className='flex items-center justify-center h-[350px] md:h-[400px] lg:h-[548px] w-full lg:max-w-[692px] rounded-[8px] md:rounded-2xl backdrop-blur-sm overflow-hidden'
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.4 }}
       >

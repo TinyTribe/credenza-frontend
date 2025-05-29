@@ -21,23 +21,23 @@ export const sections: SectionProps[] = [
     id: 'verifiable-nft',
     title: 'Verifiable NFT Credentials',
     subtitle:
-      'Showcase your achievements with tamper-proof digital credentials. Your professional milestones are issued as NFTs, owned by you, and verifiable by anyone—no central authority needed.',
+      'Highlight your achievements with secure digital credentials. Your milestones are NFTs, owned and verifiable by you—no central authority required.',
     animation: <VerifiableNftAnimation />,
     color: '#014ADD',
   },
   {
     id: 'on-chain-verified',
-    title: 'On-Chain Verified',
+    title: 'On-Chain Verified Organizations',
     subtitle:
-      'Every credential is permanently recorded on the blockchain, ensuring authenticity and preventing fraud. Your achievements become part of an immutable digital record.',
+      'Get hired companies that are verified on credenza. Only authenticated organizations can issue credentials or post jobs, so you know you’re dealing with legit entities.',
     animation: <OnChainVerifiedAnimation />,
     color: '#FFCC84',
   },
   {
     id: 'decentralized-job',
-    title: 'Decentralized Job Matching',
+    title: 'Decentralized Job Marketplace',
     subtitle:
-      'Connect with opportunities through our decentralized network. Smart contracts ensure fair compensation and transparent hiring processes without intermediaries.',
+      'Skip the middleman—get hired through trustless matching. Smart contracts match verified talent with real job postings, creating a fair, transparent, and efficient hiring process.',
     animation: <DecentralizedJobAnimation />,
     color: '#84FF8C',
   },
