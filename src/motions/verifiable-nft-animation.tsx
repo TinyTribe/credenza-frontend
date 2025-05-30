@@ -13,7 +13,7 @@ export default function VerifiableNftAnimation() {
         const newId = Math.max(...prev) + 1
         return [...prev.slice(-2), newId]
       })
-    }, 2000)
+    }, 500)
 
     return () => clearInterval(interval)
   }, [])

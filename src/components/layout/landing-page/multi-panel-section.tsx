@@ -54,8 +54,8 @@ export const MultiPanelSection = () => {
   }, [activeIndex])
 
   useEffect(() => {
-    const duration = 1800
-    const updateInterval = 200
+    const duration = 2000
+    const updateInterval = 50
     const increment = updateInterval / duration
 
     intervalRef.current = setInterval(() => {
@@ -91,9 +91,9 @@ export const MultiPanelSection = () => {
         <AnimatePresence mode='wait'>
           <motion.div
             key={activeIndex}
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
             transition={{
               type: 'tween',
               ease: 'easeInOut',

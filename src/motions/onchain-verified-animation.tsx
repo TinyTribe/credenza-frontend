@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CheckIcon, CheckMobileIcon } from '../components/ui/icons/icons'
 
 export const OnChainVerifiedAnimation = () => {
-  const companies = ['Google', 'Microsoft', 'Starknet', 'Amazon', 'Meta']
+  const companies = ['Google', 'Microsoft', 'Starknet']
   const [currentCompanyIndex, setCurrentCompanyIndex] = useState(0)
 
   const topCarouselRef = useRef<HTMLDivElement | null>(null)
@@ -16,7 +16,7 @@ export const OnChainVerifiedAnimation = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCompanyIndex((prevIndex) => (prevIndex + 1) % companies.length)
-    }, 400)
+    }, 800)
 
     if (topCarouselRef.current && bottomCarouselRef.current) {
       setCarouselWidth(
