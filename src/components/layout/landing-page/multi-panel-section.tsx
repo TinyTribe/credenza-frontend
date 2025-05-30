@@ -3,7 +3,7 @@
 import { DecentralizedJobAnimation } from '@/motions/decentralized-job-animation'
 import { OnChainVerifiedAnimation } from '@/motions/onchain-verified-animation'
 import VerifiableNftAnimation from '@/motions/verifiable-nft-animation'
-import { AnimatePresence, motion, useInView } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 import { ScrollIndicator } from '../../custom/scroll-indicator'
 import { SectionPanel } from '../../custom/sectional-panel'
@@ -29,7 +29,7 @@ export const sections: SectionProps[] = [
     id: 'on-chain-verified',
     title: 'On-Chain Verified Organizations',
     subtitle:
-      'Get hired companies that are verified on credenza. Only authenticated organizations can issue credentials or post jobs, so you know you’re dealing with legit entities.',
+      "Get hired companies that are verified on credenza. Only authenticated organizations can issue credentials or post jobs, so you know you're dealing with legit entities.",
     animation: <OnChainVerifiedAnimation />,
     color: '#FFCC84',
   },
@@ -46,17 +46,14 @@ export const sections: SectionProps[] = [
 export const MultiPanelSection = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const [progress, setProgress] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { once: false, amount: 0.3 })
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const activeIndexRef = useRef(0)
 
   useEffect(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-    }
+    activeIndexRef.current = activeIndex
+  }, [activeIndex])
 
-    if (!isInView) return
-
+  useEffect(() => {
     const duration = 8000
     const updateInterval = 50
     const increment = updateInterval / duration
@@ -65,7 +62,8 @@ export const MultiPanelSection = () => {
       setProgress((prev) => {
         const newProgress = prev + increment
         if (newProgress >= 1) {
-          setActiveIndex((current) => (current + 1) % sections.length)
+          const nextIndex = (activeIndexRef.current + 1) % sections.length
+          setActiveIndex(nextIndex)
           return 0
         }
         return newProgress
@@ -77,10 +75,10 @@ export const MultiPanelSection = () => {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isInView])
+  }, [])
 
   return (
-    <div ref={containerRef} className='w-full relative overflow-hidden'>
+    <div className='w-full relative overflow-hidden'>
       <div className='relative'>
         <AnimatePresence mode='wait'>
           <motion.div
@@ -91,7 +89,7 @@ export const MultiPanelSection = () => {
             transition={{
               type: 'tween',
               ease: 'easeInOut',
-              duration: 0.6,
+              duration: 0.2,
             }}
             className='w-full'
           >
