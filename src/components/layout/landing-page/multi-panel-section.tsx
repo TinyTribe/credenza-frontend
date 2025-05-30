@@ -79,6 +79,14 @@ export const MultiPanelSection = () => {
 
   return (
     <div className='w-full relative overflow-hidden'>
+      <div className='hidden lg:block absolute top-0 right-0 z-20 lg:max-w-[442px] w-full'>
+        <ScrollIndicator
+          sections={sections}
+          activeIndex={activeIndex}
+          progress={progress}
+        />
+      </div>
+
       <div className='relative'>
         <AnimatePresence mode='wait'>
           <motion.div
@@ -103,7 +111,7 @@ export const MultiPanelSection = () => {
         </AnimatePresence>
       </div>
 
-      <div className='lg:hidden mt-4 max-sm:max-w-[280px] mx-auto'>
+      <div className='lg:hidden mt-4 max-lg:max-w-11/12 mx-auto'>
         <ScrollIndicator
           sections={sections}
           activeIndex={activeIndex}

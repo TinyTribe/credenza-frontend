@@ -1,22 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ScrollIndicator } from './scroll-indicator'
-import { sections } from '../layout/landing-page/multi-panel-section'
 
 interface SectionPanelProps {
-  section: (typeof sections)[0]
+  section: {
+    id: string
+    title: string
+    subtitle: string
+    animation: React.ReactNode
+    color: string
+  }
   isActive: boolean
   activeIndex: number
   progress: number
 }
 
-export const SectionPanel = ({
-  section,
-  isActive,
-  activeIndex,
-  progress,
-}: SectionPanelProps) => {
+export const SectionPanel = ({ section, isActive }: SectionPanelProps) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -109,15 +108,8 @@ export const SectionPanel = ({
 
       <motion.div
         variants={textContainerVariants}
-        className='flex flex-col gap-3 md:gap-6 w-full lg:max-w-[442px] rounded-2xl backdrop-blur-sm bg-white px-4 md:px-8 lg:px-12 max-md:py-4 max-lg:py-8'
+        className='flex flex-col gap-3 md:gap-6 w-full lg:max-w-[442px] rounded-2xl backdrop-blur-sm bg-white max-sm:px-4 max-md:px-8 max-lg:px-12 max-md:py-4 max-lg:py-8'
       >
-        <ScrollIndicator
-          sections={sections}
-          activeIndex={activeIndex}
-          progress={progress}
-          className='max-lg:hidden'
-        />
-
         <motion.h1
           variants={titleVariants}
           className='text-2xl md:text-3xl lg:text-[40px] xl:tracking-[-1.28px] font-bold text-[#020717] lg:mt-10'
