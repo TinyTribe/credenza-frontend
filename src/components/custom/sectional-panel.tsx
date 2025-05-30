@@ -65,7 +65,7 @@ export const SectionPanel = ({ section, isActive }: SectionPanelProps) => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.3,
         type: 'spring',
         stiffness: 100,
         damping: 15,
@@ -82,8 +82,8 @@ export const SectionPanel = ({ section, isActive }: SectionPanelProps) => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        delay: 0.3,
+        duration: 0.2,
+        delay: 0.1,
         ease: 'easeOut',
       },
     },

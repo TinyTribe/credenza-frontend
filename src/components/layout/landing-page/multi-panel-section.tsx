@@ -54,8 +54,8 @@ export const MultiPanelSection = () => {
   }, [activeIndex])
 
   useEffect(() => {
-    const duration = 8000
-    const updateInterval = 50
+    const duration = 1800
+    const updateInterval = 200
     const increment = updateInterval / duration
 
     intervalRef.current = setInterval(() => {
@@ -79,7 +79,7 @@ export const MultiPanelSection = () => {
 
   return (
     <div className='w-full relative overflow-hidden'>
-      <div className='hidden lg:block absolute top-0 right-0 z-20 lg:max-w-[442px] w-full'>
+      <div className='hidden lg:block absolute top-1 right-0 z-20 lg:max-w-[442px] w-full'>
         <ScrollIndicator
           sections={sections}
           activeIndex={activeIndex}

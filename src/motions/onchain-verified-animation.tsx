@@ -16,7 +16,7 @@ export const OnChainVerifiedAnimation = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCompanyIndex((prevIndex) => (prevIndex + 1) % companies.length)
-    }, 1600)
+    }, 400)
 
     if (topCarouselRef.current && bottomCarouselRef.current) {
       setCarouselWidth(
