@@ -1,40 +1,40 @@
-'use client'
+'use client';
 
-import { Button } from '@/components/ui/button'
-import IconCarousel from '@/motions/animated-scroll'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Button } from '@/components/ui/button';
+import IconCarousel from '@/motion/animated-scroll';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import {
   containerVariants,
   floatingAnimation,
   itemVariants,
   rotatingFloatingAnimation,
-} from '@/motions/variants'
+} from '@/motion/variants';
 
 export function HeroSection() {
   return (
-    <section className='w-full px-4 md:px-8 lg:px-16 py-12 md:py-20 bg-white rounded-2xl'>
-      <div className='max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between'>
+    <section className="w-full rounded-2xl bg-white px-4 py-12 md:px-8 md:py-20 lg:px-16">
+      <div className="mx-auto flex max-w-7xl flex-col-reverse items-center justify-between lg:flex-row">
         <motion.div
-          className='w-full lg:w-[45%] xl:w-1/2 max-md:mb-0 mb-12 md:mb-0 pr-0 md:pr-8'
+          className="mb-12 w-full pr-0 max-md:mb-0 md:mb-0 md:pr-8 lg:w-[45%] xl:w-1/2"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h1
-            className='text-[#020717] text-3xl mt-4 lg:mt-0 sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6'
-            initial='hidden'
-            animate='visible'
+            className="mt-4 mb-6 text-3xl leading-tight font-bold text-[#020717] sm:text-5xl md:text-6xl lg:mt-0 lg:text-7xl"
+            initial="hidden"
+            animate="visible"
             variants={itemVariants}
           >
             Own Your Professional Identity
           </motion.h1>
           <motion.p
-            className='text-[#747c88] text-lg md:text-xl max-w-xl mb-8'
-            initial='hidden'
-            animate='visible'
+            className="mb-8 max-w-xl text-lg text-[#747c88] md:text-xl"
+            initial="hidden"
+            animate="visible"
             variants={itemVariants}
           >
             Join our decentralized resume platform to showcase your skills,
@@ -42,57 +42,57 @@ export function HeroSection() {
             secure, intermediary-free experience!
           </motion.p>
           <motion.div
-            className='flex max-[375px]:flex-col gap-2 md:gap-4'
-            initial='hidden'
-            animate='visible'
+            className="flex gap-2 max-[375px]:flex-col md:gap-4"
+            initial="hidden"
+            animate="visible"
             variants={itemVariants}
           >
             <Button
               asChild
-              size='lg'
-              className='bg-[#004fee] hover:bg-[#0040d0] text-white px-8'
+              size="lg"
+              className="bg-[#004fee] px-8 text-white hover:bg-[#0040d0]"
             >
-              <Link href='#'>Join us for free</Link>
+              <Link href="#">Join us for free</Link>
             </Button>
             <Button
               asChild
-              variant='outline'
-              size='lg'
-              className='border-[#cfcfcf] text-[#1f1f1f] px-8'
+              variant="outline"
+              size="lg"
+              className="border-[#cfcfcf] px-8 text-[#1f1f1f]"
             >
-              <Link href='#'>Learn more</Link>
+              <Link href="#">Learn more</Link>
             </Button>
           </motion.div>
         </motion.div>
 
         <motion.div
-          className='w-full lg:w-1/2 max-w-[533px] aspect-square relative min-h-[310px] sm:min-h-[400px] xl:min-h-[520px] mx-auto'
+          className="relative mx-auto aspect-square min-h-[310px] w-full max-w-[533px] sm:min-h-[400px] lg:w-1/2 xl:min-h-[520px]"
           variants={containerVariants}
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
         >
           <motion.div
-            className='absolute top-[10%] right-[15%] w-4 h-4 rounded-full bg-[#84b5ff]'
+            className="absolute top-[10%] right-[15%] h-4 w-4 rounded-full bg-[#84b5ff]"
             animate={floatingAnimation}
           />
           <motion.div
-            className='absolute bottom-[5%] right-[5%] w-6 h-6 rounded-full bg-[#84b5ff]'
+            className="absolute right-[5%] bottom-[5%] h-6 w-6 rounded-full bg-[#84b5ff]"
             animate={floatingAnimation}
           />
           <motion.div
             animate={rotatingFloatingAnimation}
-            className='absolute top-[40%] left-[10%] w-6 h-6 bg-[#ffcc84] transform rotate-45'
+            className="absolute top-[40%] left-[10%] h-6 w-6 rotate-45 transform bg-[#ffcc84]"
             style={{ borderRadius: '30%' }}
           />
 
           {/* Green block */}
           <motion.div
-            className='absolute top-[6%] left-[16%] w-[41%]'
+            className="absolute top-[6%] left-[16%] w-[41%]"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
             <motion.div
-              className='absolute -top-3 -right-4 p-2.5 bg-[#84FF8C] w-10 h-10 rounded-full flex items-center justify-center'
+              className="absolute -top-3 -right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#84FF8C] p-2.5"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [1, 0.8, 1],
@@ -103,32 +103,32 @@ export function HeroSection() {
                 },
               }}
             >
-              <Image src='/sparkles.svg' alt='spark' width={30} height={30} />
+              <Image src="/sparkles.svg" alt="spark" width={30} height={30} />
             </motion.div>
             <Image
-              src='/green-bg.png'
-              alt='Person'
+              src="/green-bg.png"
+              alt="Person"
               width={230}
               height={285}
-              className='object-contain w-full h-full'
+              className="h-full w-full object-contain"
             />
           </motion.div>
 
           {/* Orange block */}
           <motion.div
-            className='absolute top-[16.8%] right-0 w-[40%]'
+            className="absolute top-[16.8%] right-0 w-[40%]"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
             <Image
-              src='/orange-bg.svg'
-              alt='Person'
+              src="/orange-bg.svg"
+              alt="Person"
               width={203}
               height={242}
-              className='object-contain w-full h-full'
+              className="h-full w-full object-contain"
             />
             <motion.div
-              className='absolute -bottom-[40%] left-[10%] w-[20%] h-[30%] rounded-[13px] bg-[#FFCC84] flex items-center justify-center overflow-hidden'
+              className="absolute -bottom-[40%] left-[10%] flex h-[30%] w-[20%] items-center justify-center overflow-hidden rounded-[13px] bg-[#FFCC84]"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
@@ -142,44 +142,44 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className='w-full h-full flex items-center justify-center'
+                className="flex h-full w-full items-center justify-center"
               >
-                <Image src='/flash.svg' alt='flash' width={38} height={40} />
+                <Image src="/flash.svg" alt="flash" width={38} height={40} />
               </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Blue block */}
           <motion.div
-            className='absolute left-0 bottom-0 w-[60%]'
+            className="absolute bottom-0 left-0 w-[60%]"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
             <motion.div
-              className='absolute -top-[8%] -left-3 bg-[#84B5FF] h-14 w-14 p-1 md:p-4 rounded-4xl flex items-center justify-center overflow-hidden'
+              className="absolute -top-[8%] -left-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-4xl bg-[#84B5FF] p-1 md:p-4"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className='w-full h-full flex items-center justify-center'
+                className="flex h-full w-full items-center justify-center"
               >
-                <Image src='/globe.svg' alt='globe' width={54} height={54} />
+                <Image src="/globe.svg" alt="globe" width={54} height={54} />
               </motion.div>
             </motion.div>
             <Image
-              src='/blue-bg.png'
-              alt='Person using laptop'
+              src="/blue-bg.png"
+              alt="Person using laptop"
               width={314}
               height={217}
-              className='object-contain w-full h-full'
+              className="h-full w-full object-contain"
             />
           </motion.div>
 
           {/* Icon Carousel */}
           <motion.div
-            className='absolute md:top-[54%] top-[53%] right-[35%] bg-[#004FEE] w-[25%] h-[30px] sm:h-[40px] rounded-full p-1 shadow-md z-10'
+            className="absolute top-[53%] right-[35%] z-10 h-[30px] w-[25%] rounded-full bg-[#004FEE] p-1 shadow-md sm:h-[40px] md:top-[54%]"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
           >
@@ -188,5 +188,5 @@ export function HeroSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

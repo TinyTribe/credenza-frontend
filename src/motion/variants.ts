@@ -8,7 +8,7 @@ export const containerVariants = {
       delayChildren: 0.3,
     },
   },
-}
+};
 
 export const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,7 +17,7 @@ export const itemVariants = {
     y: 0,
     transition: { duration: 0.6, ease: 'easeOut' },
   },
-}
+};
 
 export const floatingAnimation = {
   y: ['-5px', '5px'],
@@ -29,7 +29,7 @@ export const floatingAnimation = {
       ease: 'easeInOut',
     },
   },
-}
+};
 
 export const rotatingFloatingAnimation = {
   ...floatingAnimation,
@@ -42,4 +42,4 @@ export const rotatingFloatingAnimation = {
       ease: 'linear',
     },
   },
-}
+};

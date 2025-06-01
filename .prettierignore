@@ -1,0 +1,25 @@
+commitlint.config.js
+jest.config.js
+public
+move-bytecode-template.js
+.next
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+node_modules
+ .next
+ .husky
+ coverage
+ .prettierignore
+ .stylelintignore
+ .eslintignore
+ stories
+ storybook-static
+ *.log
+ playwright-report
+ .nyc_output
+ test-results
+ junit.xml
+ docs

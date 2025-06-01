@@ -1,38 +1,38 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function VerifiableNftAnimation() {
-  const [pulses, setPulses] = useState([1, 2, 3])
+  const [pulses, setPulses] = useState([1, 2, 3]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPulses((prev) => {
-        const newId = Math.max(...prev) + 1
-        return [...prev.slice(-2), newId]
-      })
-    }, 2000)
+        const newId = Math.max(...prev) + 1;
+        return [...prev.slice(-2), newId];
+      });
+    }, 2000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className='bg-[#84B5FF] h-full w-full rounded-[8px] md:rounded-2xl backdrop-blur-sm relative overflow-hidden'>
+    <div className="relative h-full w-full overflow-hidden rounded-[8px] bg-[#84B5FF] backdrop-blur-sm md:rounded-2xl">
       <Image
         src={'/wall.svg'}
-        alt='Wall layout'
+        alt="Wall layout"
         width={906}
         height={311}
-        className='absolute inset-0 w-full h-full sm:h-3/4 lg:h-full sm:my-auto sm:object-cover lg:object-contain'
+        className="absolute inset-0 h-full w-full sm:my-auto sm:h-3/4 sm:object-cover lg:h-full lg:object-contain"
       />
 
-      <div className='absolute inset-0 flex items-center justify-center'>
+      <div className="absolute inset-0 flex items-center justify-center">
         {pulses.map((id) => (
           <motion.div
             key={id}
-            className='absolute'
+            className="absolute"
             initial={{ opacity: 0.7, scale: 1 }}
             animate={{
               opacity: [0.7, 0],
@@ -47,16 +47,16 @@ export default function VerifiableNftAnimation() {
           >
             <Image
               src={'/shield-pulse.svg'}
-              alt='Shield pulse'
+              alt="Shield pulse"
               width={308}
               height={362}
-              className='max-md:w-[154px] max-md:h-[184px] max-w-[308px] max-h-[362px]'
+              className="max-h-[362px] max-w-[308px] max-md:h-[184px] max-md:w-[154px]"
             />
           </motion.div>
         ))}
       </div>
 
-      <div className='absolute inset-0 flex items-center justify-center'>
+      <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
           animate={{ scale: [1, 1.03, 1] }}
           transition={{
@@ -68,13 +68,13 @@ export default function VerifiableNftAnimation() {
         >
           <Image
             src={'/shield.svg'}
-            alt='Shield Logo'
+            alt="Shield Logo"
             width={136}
             height={168}
-            className='w-[69px] h-[81px] md:w-[136px] md:h-[168px]'
+            className="h-[81px] w-[69px] md:h-[168px] md:w-[136px]"
           />
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
