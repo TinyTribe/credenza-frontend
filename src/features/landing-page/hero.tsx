@@ -24,7 +24,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h1
-            className="mt-4 mb-6 text-3xl leading-tight font-bold text-[#020717] sm:text-5xl md:text-6xl lg:mt-0 lg:text-7xl"
+            className="mb-6 mt-4 text-3xl font-bold leading-tight text-[#020717] sm:text-5xl md:text-6xl lg:mt-0 lg:text-7xl"
             initial="hidden"
             animate="visible"
             variants={itemVariants}
@@ -72,27 +72,27 @@ export function HeroSection() {
           animate="visible"
         >
           <motion.div
-            className="absolute top-[10%] right-[15%] h-4 w-4 rounded-full bg-[#84b5ff]"
+            className="absolute right-[15%] top-[10%] h-4 w-4 rounded-full bg-[#84b5ff]"
             animate={floatingAnimation}
           />
           <motion.div
-            className="absolute right-[5%] bottom-[5%] h-6 w-6 rounded-full bg-[#84b5ff]"
+            className="absolute bottom-[5%] right-[5%] h-6 w-6 rounded-full bg-[#84b5ff]"
             animate={floatingAnimation}
           />
           <motion.div
             animate={rotatingFloatingAnimation}
-            className="absolute top-[40%] left-[10%] h-6 w-6 rotate-45 transform bg-[#ffcc84]"
+            className="absolute left-[10%] top-[40%] h-6 w-6 rotate-45 transform bg-[#ffcc84]"
             style={{ borderRadius: '30%' }}
           />
 
           {/* Green block */}
           <motion.div
-            className="absolute top-[6%] left-[16%] w-[41%]"
+            className="absolute left-[16%] top-[6%] w-[41%]"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
             <motion.div
-              className="absolute -top-3 -right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#84FF8C] p-2.5"
+              className="absolute -right-4 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#84FF8C] p-2.5"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [1, 0.8, 1],
@@ -116,7 +116,7 @@ export function HeroSection() {
 
           {/* Orange block */}
           <motion.div
-            className="absolute top-[16.8%] right-0 w-[40%]"
+            className="absolute right-0 top-[16.8%] w-[40%]"
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
           >
@@ -156,7 +156,7 @@ export function HeroSection() {
             whileHover={{ scale: 1.02 }}
           >
             <motion.div
-              className="absolute -top-[8%] -left-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-4xl bg-[#84B5FF] p-1 md:p-4"
+              className="rounded-4xl absolute -left-3 -top-[8%] flex h-14 w-14 items-center justify-center overflow-hidden bg-[#84B5FF] p-1 md:p-4"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
             >
@@ -179,7 +179,7 @@ export function HeroSection() {
 
           {/* Icon Carousel */}
           <motion.div
-            className="absolute top-[53%] right-[35%] z-10 h-[30px] w-[25%] rounded-full bg-[#004FEE] p-1 shadow-md sm:h-[40px] md:top-[54%]"
+            className="absolute right-[35%] top-[53%] z-10 h-[30px] w-[25%] rounded-full bg-[#004FEE] p-1 shadow-md sm:h-[40px] md:top-[54%]"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
           >
