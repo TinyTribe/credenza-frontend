@@ -13,7 +13,7 @@ export default function VerifiableNftAnimation() {
         const newId = Math.max(...prev) + 1;
         return [...prev.slice(-2), newId];
       });
-    }, 2000);
+    }, 500);
 
     return () => clearInterval(interval);
   }, []);
@@ -69,9 +69,9 @@ export default function VerifiableNftAnimation() {
           <Image
             src={'/shield.svg'}
             alt="Shield Logo"
-            width={136}
-            height={168}
-            className="h-[81px] w-[69px] md:h-[168px] md:w-[136px]"
+            width={135}
+            height={160}
+            className="h-[81px] w-[69px] md:h-[160px] md:w-[135px]"
           />
         </motion.div>
       </div>
