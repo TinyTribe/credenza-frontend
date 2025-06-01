@@ -3,6 +3,7 @@
 import { OrganizationsIcon, TalentsIcon } from '@/components/ui/icons/icons';
 import AccountCard from '@/features/auth/account-card';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface AccountType {
@@ -68,30 +69,34 @@ export default function AccountType() {
   return (
     <div className="flex max-lg:flex-col">
       <motion.section
-        className="w-full overflow-hidden max-lg:h-48 max-md:h-56 lg:h-auto lg:max-w-[460px] xl:max-w-[622px]"
+        className="block w-full overflow-hidden max-lg:h-[280px] md:hidden lg:block lg:h-auto lg:max-w-[500px] xl:max-w-[622px]"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <img
+        <Image
           src="/account-type-bg.png"
           alt="Account Type Illustration"
           className="w-full"
+          width={622}
+          height={1020}
         />
       </motion.section>
 
       <section className="flex w-full justify-center">
         <motion.div
-          className="mt-10 w-full max-w-[609px] px-6 max-lg:mb-20 max-md:mb-10 lg:mt-36"
+          className="mt-10 w-full max-w-[609px] px-6 max-lg:mb-20 max-md:mb-10 md:mt-20 lg:mt-36"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div className="flex justify-end" variants={itemVariants}>
-            <img
+            <Image
               src="/logo.svg"
               alt="Credenza logo"
               className="h-auto max-lg:w-[200px] max-md:w-[150px] lg:w-[232px]"
+              width={232}
+              height={20}
             />
           </motion.div>
 
