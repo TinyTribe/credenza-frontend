@@ -1,21 +1,20 @@
-import Navbar from '@/components/navbar';
-import { DecentralizedJob } from '@/features/landing-page/decentralized-job';
-import { HeroSection } from '@/features/landing-page/hero';
-import { OnChainVerified } from '@/features/landing-page/on-chain-verified';
-import { TrustlessCredenza } from '@/features/landing-page/trustless-credenza';
-import { VerifiableNft } from '@/features/landing-page/verifiable-nft';
+import Navbar from "@/components/navbar"
+import { HeroSection } from "@/features/landing-page/hero"
+import { MultiPanelSection } from "@/features/landing-page/multi-panel-section"
+
 
 const Home = () => {
   return (
-    <div className="mx-auto flex w-full max-w-[1390px] flex-col gap-2 px-5 py-2 md:px-6">
+    <div className='max-w-[1440px] mx-auto w-full'>
       <Navbar />
       <HeroSection />
-      <TrustlessCredenza />
-      <VerifiableNft />
-      <OnChainVerified />
-      <DecentralizedJob />
+      <div className='max-w-[1184px] mx-auto px-5 md:px-6 w-full flex flex-col gap-[50px] md:gap-[100px] lg:gap-[200px] pt-[50px] md:pt-[100px] lg:pt-[200px]'>
+        <MultiPanelSection />
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
+
+
