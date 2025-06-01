@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
-import { TypewriterText } from '../typewriter-text'
+import { TypewriterText } from '../../../utils/typewriter-text'
 
 export const TrustlessCredenza = () => {
   const ref = React.useRef(null)
