@@ -125,3 +125,33 @@
     @apply bg-none;
   }
 }
+
+
+@layer components {
+  .image-container {
+    width: 100% ;
+    height: 456px;
+  }
+
+  .footer-image {
+   width: 1440px !important;
+   height: 457px !important;
+    background-repeat: repeat !important;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .join-button {
+    background: linear-gradient(126.75deg, #004FEE 15.63%, #00349B 72.75%);
+
+  }
+
+    .mobile-image {
+      width: 876px !important;
+      height: 457px !important;
+      background-repeat: no-repeat !important;
+     background-size: contain !important;
+     background-position: center !important;
+    
+    }
+}
