@@ -1,6 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import {
   OrganizationStepThree,
   OrganizationStepTwo,
@@ -217,6 +216,8 @@ export const HowToGetStarted = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        role="tablist"
+        aria-label="Select user type"
       >
         <motion.div
           className="absolute bottom-[2px] top-[2px] w-[calc(50%-3px)] rounded-full border-[0.5px] border-[rgba(0,0,0,0.04)] bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.12),_0px_3px_1px_0px_rgba(0,0,0,0.04)]"
@@ -228,36 +229,43 @@ export const HowToGetStarted = ({
             stiffness: 300,
             damping: 30,
           }}
+          aria-hidden="true"
         />
 
         <motion.div className="relative z-10 w-1/2">
-          <Button
-            className={`min-h-[38px] w-full rounded-full border-transparent bg-transparent text-base font-medium leading-8 transition-colors duration-200 md:text-[20px] ${
+          <button
+            className={`min-h-[38px] w-full rounded-full border-transparent bg-transparent text-base font-medium leading-8 transition-all duration-200 md:text-[20px] ${
               activeTab === 'talent'
                 ? 'text-[#004FEE]'
                 : 'text-[#020717] hover:text-[#004FEE]'
             }`}
             onClick={() => setActiveTab('talent')}
             aria-selected={activeTab === 'talent'}
+            aria-controls="tab-content"
             role="tab"
+            tabIndex={0}
+            id="talent-tab"
           >
             Talent
-          </Button>
+          </button>
         </motion.div>
 
         <motion.div className="relative z-10 w-1/2">
-          <Button
-            className={`inset-0 min-h-[38px] w-full rounded-full border-transparent bg-transparent text-base font-medium leading-8 transition-colors duration-200 md:text-[20px] ${
+          <button
+            className={`min-h-[38px] w-full rounded-full border-transparent bg-transparent text-base font-medium leading-8 transition-all duration-200 md:text-[20px] ${
               activeTab === 'organizations'
                 ? 'text-[#004FEE]'
                 : 'text-[#020717] hover:text-[#004FEE]'
             }`}
             onClick={() => setActiveTab('organizations')}
             aria-selected={activeTab === 'organizations'}
+            aria-controls="tab-content"
             role="tab"
+            tabIndex={0}
+            id="organizations-tab"
           >
             Organizations
-          </Button>
+          </button>
         </motion.div>
       </motion.div>
 
@@ -299,6 +307,9 @@ export const HowToGetStarted = ({
           initial="hidden"
           animate="visible"
           exit="exit"
+          role="tabpanel"
+          id="tab-content"
+          aria-labelledby={`${activeTab}-tab`}
         >
           {currentSteps.map((step, index) => (
             <motion.div
