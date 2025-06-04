@@ -41,7 +41,7 @@ export default function AccountCard({
       animate={isSelected ? 'selected' : 'initial'}
       whileHover="hover"
       whileTap="tap"
-      className={`relative flex min-h-[162px] w-full cursor-pointer flex-col gap-2.5 overflow-hidden rounded-[8px] border-2 px-4 py-3 transition-all duration-200 ease-in-out lg:max-w-[292.5px]`}
+      className={`relative flex min-h-[162px] w-full cursor-pointer flex-col gap-2.5 overflow-hidden rounded-[8px] border-2 px-4 py-3 transition-all duration-200 ease-in-out md:max-w-[292.5px]`}
       style={{ borderColor }}
       onClick={onClick}
       onMouseEnter={() => onHover(true)}
