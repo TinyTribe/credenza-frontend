@@ -13,7 +13,7 @@ import localFont from 'next/font/local';
 import { useState } from 'react';
 
 const playfairDisplay = localFont({
-  src: '../../fonts/Satoshi-Variable.ttf',
+  src: '../../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf',
 });
 
 export interface Step {
