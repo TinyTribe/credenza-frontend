@@ -67,9 +67,9 @@ export default function AccountType() {
   };
 
   return (
-    <div className="flex max-lg:flex-col">
+    <div className="mx-auto flex h-screen max-w-[1440px] max-lg:h-auto max-lg:min-h-screen">
       <motion.section
-        className="block w-full overflow-hidden max-lg:h-[280px] md:hidden lg:block lg:h-auto lg:max-w-[500px] xl:max-w-[622px]"
+        className="hidden w-full overflow-hidden lg:block lg:h-full lg:w-[70%]"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -85,7 +85,7 @@ export default function AccountType() {
 
       <section className="flex w-full justify-center">
         <motion.div
-          className="mt-10 w-full max-w-[609px] px-6 max-lg:mb-20 max-md:mb-10 md:mt-20 lg:mt-36"
+          className="w-full max-w-[609px] max-xl:px-6 max-lg:mb-20 max-lg:mt-20 max-md:mb-10 max-md:mt-10 lg:mt-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -100,12 +100,12 @@ export default function AccountType() {
             />
           </motion.div>
 
-          <div className="mx-auto mt-16 flex flex-col gap-6 md:gap-8 lg:mt-[101px] lg:gap-[52px]">
+          <div className="mx-auto mt-16 flex flex-col gap-6 md:gap-10 lg:mt-20 lg:gap-[52px]">
             <motion.h1
               className="flex w-full justify-end text-[36px] font-medium tracking-[-1.28px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px]"
               variants={itemVariants}
             >
-              <span className="md:leading-12 text-right leading-8 lg:leading-[64px] xl:max-w-[320px]">
+              <span className="md:leading-12 text-right leading-8 lg:max-w-[320px] lg:leading-[64px]">
                 Account Type
               </span>
             </motion.h1>
@@ -149,11 +149,11 @@ export default function AccountType() {
 
             <motion.div
               variants={itemVariants}
-              whileHover={selectedAccount ? { scale: 1.02 } : { scale: 1 }}
+              whileHover={selectedAccount ? { scale: 1.01 } : { scale: 1 }}
               whileTap={selectedAccount ? { scale: 0.98 } : { scale: 1 }}
             >
               <motion.button
-                className={`w-full rounded-md px-6 py-4 text-[18px] font-bold leading-7 text-white transition-all duration-300 md:rounded-xl md:px-8 md:py-5 ${
+                className={`w-full rounded-full px-6 py-3.5 text-[18px] font-bold leading-7 text-white transition-all duration-300 md:px-8 md:py-5 ${
                   selectedAccount
                     ? 'cursor-pointer bg-gradient-to-br from-[#004FEE] via-[#004FEE] to-[#00349B] hover:shadow-lg'
                     : 'cursor-not-allowed bg-gray-400 opacity-60'
