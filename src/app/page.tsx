@@ -8,7 +8,7 @@ const Home = () => {
     <div className="mx-auto w-full max-w-[1440px]">
       <Navbar />
       <HeroSection />
-      <div className="mx-auto flex w-full max-w-[1184px] flex-col gap-[50px] px-5 pt-[50px] md:gap-[100px] md:px-6 md:pt-[100px] lg:gap-[200px] lg:pt-[200px]">
+      <div className="mx-auto flex w-full max-w-[1184px] flex-col gap-[100px] px-5 pt-[100px] md:px-6 lg:gap-[200px] lg:pt-[200px]">
         <MultiPanelSectionHeader />
         <MultiPanelSection />
       </div>
