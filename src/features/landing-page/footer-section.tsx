@@ -11,16 +11,16 @@ export default function footer() {
     <section className='mt-12 max-lg:mt-12 border-2 max-sm:gap-[5rem]'>
       
         <div className='image-container relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] 2xl:h-[36rem]'>
-            <Image src="/footer-image.png" 
-          alt="footer" 
-          width={1440} 
-          height={457}
-          className="object-cover  h-auto max-sm:hidden lg:max-h-[456px] footer-image"
-          sizes="(max-width: 40rem) 100vw, 
-                 (max-width: 48rem) 100vw, 
-                 (max-width: 64rem) 100vw,
-                 100vw"
-          priority
+          <Image src="/footer-image.png" 
+            alt="footer" 
+              width={1440} 
+               height={457}
+                className="object-cover  h-auto max-sm:hidden lg:max-h-[456px] footer-image"
+                  sizes="(max-width: 40rem) 100vw, 
+                      (max-width: 48rem) 100vw, 
+                      (max-width: 64rem) 100vw,
+                      100vw"
+                       priority
           />
 
           <Image src="/mobile-image.png" alt='footer-image' 
@@ -45,9 +45,6 @@ export default function footer() {
                   text-base font-normal leading-6 align-middle tracking-[2%] font-satoshi text-[#64748B]'>
                      In a decentralized world, trust is built on proof, not promises. Credenza makes your career portable, private, and cryptographically verified.
               </p>
-              
-            {/* max-lg:ml-[76.25rem] */}
-
                <div className='mt-6 ml-0'>
                   <Link href="/"> <Image src="/Ful Logos.png" alt='telegram' width={24} height={24}/> </Link>
                </div>
