@@ -1,0 +1,26 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_269_940)">
+<rect width="40" height="40" rx="20" fill="white"/>
+<rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="url(#paint0_linear_269_940)"/>
+<path d="M18.4901 10.2296L13.5002 12.0996C12.3502 12.5296 11.4102 13.8896 11.4102 15.1196V22.5495C11.4102 23.7295 12.1902 25.2795 13.1402 25.9895L17.4402 29.1996C18.8502 30.2596 21.1701 30.2596 22.5801 29.1996L26.8802 25.9895C27.8302 25.2795 28.6101 23.7295 28.6101 22.5495V15.1196C28.6101 13.8896 27.6701 12.5296 26.5201 12.0996L21.5302 10.2296C20.6802 9.91957 19.3201 9.91957 18.4901 10.2296Z" stroke="#014ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.0002 18.9204C19.9602 18.9204 19.9102 18.9204 19.8702 18.9204C18.9302 18.8904 18.1802 18.1104 18.1802 17.1604C18.1802 16.1904 18.9702 15.4004 19.9402 15.4004C20.9102 15.4004 21.7002 16.1904 21.7002 17.1604C21.6902 18.1204 20.9402 18.8904 20.0002 18.9204Z" stroke="#014ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.01 21.7204C17.05 22.3604 17.05 23.4103 18.01 24.0503C19.1 24.7803 20.89 24.7803 21.98 24.0503C22.94 23.4103 22.94 22.3604 21.98 21.7204C20.9 20.9904 19.11 20.9904 18.01 21.7204Z" stroke="#014ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_i_269_940" x="0" y="0" width="40" height="41" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_269_940"/>
+</filter>
+<linearGradient id="paint0_linear_269_940" x1="6.5" y1="5.5" x2="17.5" y2="17" gradientUnits="userSpaceOnUse">
+<stop stop-color="#014ADD"/>
+<stop offset="0.27588" stop-color="#014ADD" stop-opacity="0.410935"/>
+<stop offset="1" stop-color="#014ADD" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
