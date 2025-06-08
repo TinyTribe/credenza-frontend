@@ -1,13 +1,13 @@
 'use client'
 
-import { ScrollIndicator } from '@/components/scroll-indicator';
-import { SectionPanel } from '@/components/sectional-panel';
-import { DecentralizedJobAnimation } from '@/motion/decentralized-job-animation';
-import { OnChainVerifiedAnimation } from '@/motion/onchain-verified-animation';
-import VerifiableNftAnimation from '@/motion/verifiable-nft-animation';
-import { AnimatePresence, motion } from 'framer-motion';
-import type React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { ScrollIndicator } from '@/components/scroll-indicator'
+import { SectionPanel } from '@/components/sectional-panel'
+import { DecentralizedJobAnimation } from '@/motion/decentralized-job-animation'
+import { OnChainVerifiedAnimation } from '@/motion/onchain-verified-animation'
+import VerifiableNftAnimation from '@/motion/verifiable-nft-animation'
+import { AnimatePresence, motion } from 'framer-motion'
+import type React from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 
 interface SectionProps {
