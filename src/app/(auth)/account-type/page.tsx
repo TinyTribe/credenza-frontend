@@ -5,6 +5,7 @@ import AccountCard from '@/features/auth/account-card';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface AccountType {
   id: string;
@@ -33,6 +34,7 @@ const accountTypes: AccountType[] = [
 export default function AccountType() {
   const [selectedAccount, setSelectedAccount] = useState<string | null>(null);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleCardClick = (accountId: string) => {
     setSelectedAccount(selectedAccount === accountId ? null : accountId);
@@ -40,9 +42,9 @@ export default function AccountType() {
 
   const handleContinue = () => {
     if (selectedAccount) {
-      // console.log('Selected account type:', selectedAccount);
-
-      alert(`Proceeding with ${selectedAccount} account type`);
+      const accountType =
+        selectedAccount === 'talents' ? 'talent' : 'organization';
+      router.push(`/connect-wallet?type=${accountType}`);
     }
   };
 
