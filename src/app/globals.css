@@ -117,28 +117,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@media (max-width: 1024px) {
-  .footer-image {
-    height: 28.5825rem !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-@media (max-width: 876px) {
-    .mobile-image {
-    width: 54.75rem !important;
-    height: 28.5825rem !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-position: center !important;
-    /* object-position:center;
-    object-fit: fill; */
-    
-    }
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -146,16 +124,4 @@
   body {
     @apply bg-none;
   }
-}
-
-@layer components {
-  .image-container {
-    width: 100% ;
-    height: 456px;
-  }
-  .join-button {
-    background: linear-gradient(126.75deg, #004FEE 15.63%, #00349B 72.75%);
-
-  }
- 
 }
