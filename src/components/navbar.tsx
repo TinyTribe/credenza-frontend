@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
 import Container from './container/Container';
+import React from 'react'
 
 const Navbar = () => {
   return (

@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Camera } from 'lucide-react';
+import Image from 'next/image';
 import {
   organizationFormSchema,
   type OrganizationFormValues,
@@ -127,9 +128,11 @@ export default function OrganizationForm() {
             <div className="relative">
               <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-[#e5e5e5]">
                 {companyLogo ? (
-                  <img
+                  <Image
                     src={companyLogo || '/placeholder.svg'}
                     alt="Company Logo"
+                    width={64}
+                    height={64}
                     className="h-full w-full object-cover"
                   />
                 ) : (
