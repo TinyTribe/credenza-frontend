@@ -1,5 +1,5 @@
 'use client';
-
+import Container from '@/components/container/Container';
 import { motion } from 'framer-motion';
 import localFont from 'next/font/local';
 import Image from 'next/image';
@@ -146,51 +146,55 @@ export const MultiPanelSectionHeader = () => {
   };
 
   return (
-    <motion.div
-      className="mx-auto flex w-full max-w-[924px] flex-col gap-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-    >
-      <motion.h1
-        className="text-center text-[30px] font-bold leading-10 tracking-[-0.6px] text-[#020717] md:text-[64px] md:leading-[65px] md:tracking-[-1.28px]"
-        variants={headingVariants}
-      >
-        Verified Digital Credentials <br />
-        <motion.span
-          className={`italic text-[#014ADD] ${playfairDisplay.className}`}
-          variants={italicTextVariants}
-        >
-          Revolutionize the Talent Market
-        </motion.span>
-      </motion.h1>
-
+    <Container alt>
       <motion.div
-        className="flex items-center gap-[30px] max-md:flex-col md:gap-3"
-        variants={featuresContainerVariants}
+        className="flex w-full flex-col gap-8 pt-[100px] lg:pt-[200px]"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
       >
-        {features.map((feature, index) => (
-          <motion.div
-            key={index}
-            className="flex w-full cursor-pointer items-center gap-3 rounded-xl border border-[rgba(4,8,32,0.05)] bg-[#FAFAFB] p-5 text-[20px] font-medium leading-[27px] text-[#020717] max-md:flex-col"
-            variants={featureCardVariants}
-            whileHover="hover"
-            whileTap={{ scale: 0.98 }}
+        <motion.h1
+          className="text-center text-[30px] font-bold leading-10 tracking-[-0.6px] text-[#020717] md:text-[64px] md:leading-[65px] md:tracking-[-1.28px]"
+          variants={headingVariants}
+        >
+          Verified Digital Credentials <br />
+          <motion.span
+            className={`italic text-[#014ADD] ${playfairDisplay.className}`}
+            variants={italicTextVariants}
           >
-            <motion.span variants={iconVariants}>
-              <Image
-                src={`${feature.icon}.svg`}
-                alt={feature.feature}
-                width={40}
-                height={40}
-                priority
-              />
-            </motion.span>
-            <motion.span variants={textVariants}>{feature.feature}</motion.span>
-          </motion.div>
-        ))}
+            Revolutionize the Talent Market
+          </motion.span>
+        </motion.h1>
+
+        <motion.div
+          className="flex items-center gap-[30px] max-md:flex-col md:gap-3"
+          variants={featuresContainerVariants}
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="flex w-full cursor-pointer items-center gap-3 rounded-xl border border-[rgba(4,8,32,0.05)] bg-[#FAFAFB] p-5 text-[20px] font-medium leading-[27px] text-[#020717] max-md:flex-col"
+              variants={featureCardVariants}
+              whileHover="hover"
+              whileTap={{ scale: 0.98 }}
+            >
+              <motion.span variants={iconVariants}>
+                <Image
+                  src={`${feature.icon}.svg`}
+                  alt={feature.feature}
+                  width={40}
+                  height={40}
+                  priority
+                />
+              </motion.span>
+              <motion.span variants={textVariants}>
+                {feature.feature}
+              </motion.span>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Container>
   );
 };

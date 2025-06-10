@@ -1,0 +1,34 @@
+.container {
+    margin-inline: 16px;
+    height: 100%;
+    max-width: 1420px;
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        margin-inline: auto;
+    }
+}
+
+
+.containerAlt {
+    margin-inline: 20px;
+    max-width: 1200px;
+}
+
+@media screen and (min-width: 1220px) {
+    .containerAlt {
+        margin-inline: auto;
+    }
+}
+
+.containerLegend {
+    margin-inline: 18px;
+    max-width: 816px;
+}
+
+@media screen and (min-width: 836px) {
+    .containerLegend {
+        margin-inline: auto;
+    }
+}

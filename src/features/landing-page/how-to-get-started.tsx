@@ -1,5 +1,5 @@
 'use client';
-
+import Container from '@/components/container/Container';
 import {
   OrganizationStepThree,
   OrganizationStepTwo,
@@ -210,7 +210,8 @@ export const HowToGetStarted = ({
   };
 
   return (
-    <div className={`flex flex-col gap-8 ${className}`}>
+    <Container alt >
+    <div className={`flex flex-col gap-8 pt-[100px] lg:pt-[200px] ${className}`}>
       <motion.div
         className="relative mx-auto flex w-full max-w-[406px] rounded-full bg-[rgba(118,118,128,0.12)] p-[2px]"
         initial={{ opacity: 0, y: 20 }}
@@ -347,5 +348,6 @@ export const HowToGetStarted = ({
         </motion.div>
       </AnimatePresence>
     </div>
+    </Container>
   );
 };

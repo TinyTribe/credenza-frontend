@@ -1,192 +1,246 @@
 'use client';
-
-import { Button } from '@/components/ui/button';
-import IconCarousel from '@/motion/animated-scroll';
-import { motion } from 'framer-motion';
+import localFont from 'next/font/local';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from '../../components/ui/button';
 import Image from 'next/image';
-import Link from 'next/link';
+import Container from '@/components/container/Container';
+import { award, briefcase } from '../../../public';
 
-import {
-  containerVariants,
-  floatingAnimation,
-  itemVariants,
-  rotatingFloatingAnimation,
-} from '@/motion/variants';
+const playfairDisplay = localFont({
+  src: '../../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf',
+});
 
-export function HeroSection() {
+const heroData = [
+  {
+    id: 1,
+    name: 'Mariam Ishaq',
+    role: 'Community Leader',
+    icon: award,
+    image: '/woman.svg',
+    backgroundStyle: {
+      borderRadius: '12px',
+      background:
+        'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.18) 100%), #FFCC84',
+    },
+    badgeText: 'Credentials Verified',
+    badgeCount: '24',
+  },
+  {
+    id: 2,
+    name: 'Min Sung Lee',
+    role: 'Human Resource',
+    icon: briefcase,
+    image: '/employer.svg',
+    backgroundStyle: {
+      borderRadius: '12px',
+      background:
+        'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.17) 100%), #84B5FF',
+    },
+    badgeText: 'Credentials Issued',
+    badgeCount: '48',
+  },
+  {
+    id: 3,
+    name: 'Patrick Crossdale',
+    role: 'Developer',
+    icon: award,
+    image: '/developer.svg',
+    backgroundStyle: {
+      borderRadius: '12px',
+      background:
+        'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.17) 100%), #84FF8C',
+    },
+    badgeText: 'Credentials Verified',
+    badgeCount: '12',
+  },
+];
+
+export const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroData.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentData = heroData[currentSlide];
+
   return (
-    <section className="w-full rounded-2xl bg-white px-4 py-12 md:px-8 md:py-20 lg:px-16">
-      <div className="mx-auto flex max-w-7xl flex-col-reverse items-center justify-between lg:flex-row">
-        <motion.div
-          className="mb-12 w-full pr-0 max-md:mb-0 md:mb-0 md:pr-8 lg:w-[45%] xl:w-1/2"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <motion.h1
-            className="mb-6 mt-4 text-3xl font-bold leading-tight text-[#020717] sm:text-5xl md:text-6xl lg:mt-0 lg:text-7xl"
-            initial="hidden"
-            animate="visible"
-            variants={itemVariants}
-          >
-            Own Your Professional Identity
-          </motion.h1>
-          <motion.p
-            className="mb-8 max-w-xl text-lg text-[#747c88] md:text-xl"
-            initial="hidden"
-            animate="visible"
-            variants={itemVariants}
-          >
-            Join our decentralized resume platform to showcase your skills,
-            connect with employers, and get verified credentials. Enjoy a
-            secure, intermediary-free experience!
-          </motion.p>
-          <motion.div
-            className="flex gap-2 max-[375px]:flex-col md:gap-4"
-            initial="hidden"
-            animate="visible"
-            variants={itemVariants}
-          >
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#004fee] px-8 text-white hover:bg-[#0040d0]"
-            >
-              <Link href="#">Join us for free</Link>
+    <div className="relative min-h-screen w-full bg-[url('/bg-blur.png')] bg-cover bg-top">
+      <Container alt>
+        <div className="flex min-h-screen flex-col items-center justify-center py-8 lg:flex-row lg:items-center lg:justify-between lg:py-0">
+          <div className="flex w-full max-w-lg flex-col items-start gap-6 text-center lg:w-[32.9375rem] lg:gap-8 lg:text-left">
+            <div className="flex w-full flex-col items-start gap-4 lg:gap-6">
+              <h1 className="w-full text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-[5rem] lg:leading-[5rem]">
+                <span className="font-sans font-bold text-[#020717]">
+                  Trust Starts with
+                </span>
+                <span className="font-bold text-[#020717]">
+                  &nbsp;
+                </span>
+                <span
+                  className={`font-['Playfair_Display',Helvetica] font-bold italic text-[#014add] ${playfairDisplay.className}`}
+                >
+                  Verifiable Credentials
+                </span>
+              </h1>
+
+              <p className="w-full font-['Satoshi-Regular',Helvetica] text-base leading-6 text-[#212121] sm:text-lg sm:leading-7 lg:text-xl">
+                Join our platform to publish and verify your job experience and
+                credentials securely on the blockchain, showcasing your verified
+                status to potential employers.
+              </p>
+            </div>
+
+            <Button className="h-auto w-full rounded-[2.625rem] px-6 py-4 sm:w-auto sm:px-8 sm:py-5 [background:linear-gradient(176deg,rgba(0,79,238,1)_0%,rgba(0,52,155,1)_100%)]">
+              <span className="font-['Satoshi-Bold',Helvetica] text-base font-bold leading-6 text-white sm:text-lg sm:leading-7">
+                Join us for free
+              </span>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-[#cfcfcf] px-8 text-[#1f1f1f]"
-            >
-              <Link href="#">Learn more</Link>
-            </Button>
-          </motion.div>
-        </motion.div>
+          </div>
 
-        <motion.div
-          className="relative mx-auto aspect-square min-h-[310px] w-full max-w-[533px] sm:min-h-[400px] lg:w-1/2 xl:min-h-[520px]"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div
-            className="absolute right-[15%] top-[10%] h-4 w-4 rounded-full bg-[#84b5ff]"
-            animate={floatingAnimation}
-          />
-          <motion.div
-            className="absolute bottom-[5%] right-[5%] h-6 w-6 rounded-full bg-[#84b5ff]"
-            animate={floatingAnimation}
-          />
-          <motion.div
-            animate={rotatingFloatingAnimation}
-            className="absolute left-[10%] top-[40%] h-6 w-6 rotate-45 transform bg-[#ffcc84]"
-            style={{ borderRadius: '30%' }}
-          />
-
-          {/* Green block */}
-          <motion.div
-            className="absolute left-[16%] top-[6%] w-[41%]"
-            variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-          >
-            <motion.div
-              className="absolute -right-4 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#84FF8C] p-2.5"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [1, 0.8, 1],
-                transition: {
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
-              }}
-            >
-              <Image src="/sparkles.svg" alt="spark" width={30} height={30} />
-            </motion.div>
-            <Image
-              src="/green-bg.png"
-              alt="Person"
-              width={230}
-              height={285}
-              className="h-full w-full object-contain"
-            />
-          </motion.div>
-
-          {/* Orange block */}
-          <motion.div
-            className="absolute right-0 top-[16.8%] w-[40%]"
-            variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Image
-              src="/orange-bg.svg"
-              alt="Person"
-              width={203}
-              height={242}
-              className="h-full w-full object-contain"
-            />
-            <motion.div
-              className="absolute -bottom-[40%] left-[10%] flex h-[30%] w-[20%] items-center justify-center overflow-hidden rounded-[13px] bg-[#FFCC84]"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-            >
+          <div className="relative mt-12 h-64 w-80 rounded-xl sm:h-80 sm:w-96 lg:mt-0 lg:h-[25.625rem] lg:w-[26.1875rem]">
+            <AnimatePresence mode="wait">
               <motion.div
-                animate={{
-                  filter: ['brightness(1)', 'brightness(1.3)', 'brightness(1)'],
-                  scale: [1, 1.1, 1],
-                }}
+                key={`bg-${currentData.id}`}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
                 transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
+                  duration: 0.6,
+                  ease: [0.4, 0, 0.2, 1],
                 }}
-                className="flex h-full w-full items-center justify-center"
-              >
-                <Image src="/flash.svg" alt="flash" width={38} height={40} />
-              </motion.div>
-            </motion.div>
-          </motion.div>
+                className="absolute inset-0"
+                style={currentData.backgroundStyle}
+              />
+            </AnimatePresence>
 
-          {/* Blue block */}
-          <motion.div
-            className="absolute bottom-0 left-0 w-[60%]"
-            variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-          >
-            <motion.div
-              className="rounded-4xl absolute -left-3 -top-[8%] flex h-14 w-14 items-center justify-center overflow-hidden bg-[#84B5FF] p-1 md:p-4"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-            >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={`img-${currentData.id}`}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 10, opacity: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.2,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+                className="absolute bottom-0 left-2 w-auto max-w-[80%] h-full lg:h-max lg:max-w-[100%]  sm:left-3 lg:left-[0.6875rem]"
+                alt={`${currentData.role} profile`}
+                src={currentData.image}
+              />
+            </AnimatePresence>
+
+            {/* Badge */}
+            <AnimatePresence mode="wait">
               <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="flex h-full w-full items-center justify-center"
+                key={`badge-${currentData.id}`}
+                initial={{ opacity: 0, y: 0, scale: 1 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0,
+                  ease: [0.4, 0, 0.2, 1],
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 15,
+                }}
               >
-                <Image src="/globe.svg" alt="globe" width={54} height={54} />
-              </motion.div>
-            </motion.div>
-            <Image
-              src="/blue-bg.png"
-              alt="Person using laptop"
-              width={314}
-              height={217}
-              className="h-full w-full object-contain"
-            />
-          </motion.div>
+                <div
+                  className={`flex items-center ${
+                    currentData.id === 2
+                      ? 'absolute bottom-3 left-3 inline-flex h-auto w-max items-center gap-2 rounded-[0.3125rem] border border-solid border-[#f4f4f440] bg-green-500 px-3 py-2 shadow-[4px_4px_14px_#00000040] backdrop-blur-[10.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10.5px)_brightness(100%)] sm:bottom-4 sm:left-4 sm:gap-2.5 sm:px-[0.875rem] sm:py-3 lg:bottom-5 lg:left-5'
+                      : 'absolute bottom-3 right-3 inline-flex h-auto w-max items-center gap-2 rounded-[0.3125rem] border border-solid border-[#f4f4f440] bg-[#ffffff40] px-3 py-2 shadow-[4px_4px_14px_#00000040] backdrop-blur-[10.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10.5px)_brightness(100%)] sm:bottom-4 sm:right-4 sm:gap-2.5 sm:px-[0.875rem] sm:py-3 lg:bottom-5 lg:right-5'
+                  }`}
+                >
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.5,
+                      type: 'spring',
+                      stiffness: 200,
+                      damping: 14,
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 5,
+                      transition: { duration: 0.2 },
+                    }}
+                    className="flex-shrink-0"
+                  >
+                    <Image 
+                      src={currentData.icon} 
+                      alt="icon" 
+                      className="h-4 w-4 sm:h-5 sm:w-5 lg:h-auto lg:w-auto"
+                    />
+                  </motion.div>
 
-          {/* Icon Carousel */}
-          <motion.div
-            className="absolute right-[35%] top-[53%] z-10 h-[30px] w-[25%] rounded-full bg-[#004FEE] p-1 shadow-md sm:h-[40px] md:top-[54%]"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-          >
-            <IconCarousel />
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
+                  <div className="flex w-fit gap-1 text-sm text-white sm:gap-[7px] sm:text-base">
+                    <motion.span
+                      key={`count-${currentData.id}`}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.5,
+                        type: 'spring',
+                        stiffness: 150,
+                      }}
+                      className="font-['Satoshi-Bold',Helvetica] font-bold leading-5 sm:leading-6"
+                    >
+                      {currentData.badgeCount}
+                    </motion.span>
+
+                    <motion.span
+                      key={`text-${currentData.id}`}
+                      initial={{ opacity: 0, x: 10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.6,
+                        type: 'spring',
+                        stiffness: 150,
+                      }}
+                      className="font-['Satoshi-Regular',Helvetica] leading-5 tracking-[0.05px] sm:leading-6"
+                    >
+                      {currentData.badgeText}
+                    </motion.span>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`name-${currentData.id}`}
+                initial={{ x: -20, opacity: 0, scale: 0.95 }}
+                animate={{ x: 0, opacity: 1, scale: 1 }}
+                exit={{ x: -20, opacity: 0, scale: 0.95 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.05,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
+                className="absolute -left-4 bottom-24 flex flex-col items-start rounded-[0.3125rem] border border-solid border-[#f4f4f440] bg-[#ffffffab] px-3 py-2 shadow-[4px_4px_14px_#00000026] backdrop-blur-[10.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10.5px)_brightness(100%)] sm:-left-6 sm:bottom-32 sm:px-[0.875rem] sm:py-3 lg:-left-10 lg:bottom-40"
+              >
+                <div className="w-fit whitespace-nowrap text-xs font-medium leading-4 tracking-[0.01em] text-[#2b2b2b] sm:text-sm sm:leading-[1.125rem]">
+                  {currentData.name}
+                </div>
+                <div className="w-fit whitespace-nowrap text-xs font-normal leading-3 tracking-[0.01em] text-[#6a6464] sm:leading-4">
+                  {currentData.role}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </Container>
+    </div>
   );
-}
+};
