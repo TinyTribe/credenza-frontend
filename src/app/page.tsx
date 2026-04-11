@@ -1,10 +1,11 @@
-// import FooterSection from '@/features/landing-page/footer-section';
+import FooterSection from '@/features/landing-page/footer-section';
 import Navbar from '@/components/navbar';
 import { Hero } from '@/features/landing-page/hero';
 import { HowToGetStarted } from '@/features/landing-page/how-to-get-started';
 import { MultiPanelSection } from '@/features/landing-page/multi-panel-section';
 import { MultiPanelSectionHeader } from '@/features/landing-page/multi-panel-section-header';
 import { OrganizationsAndTalentSection } from '@/features/landing-page/organizations-and-talent';
+import { TrustlessCredenza } from '@/features/landing-page/trustless-credenza';
 
 const Home = () => {
   return (
@@ -18,8 +19,9 @@ const Home = () => {
         </div>
       </div>
       <HowToGetStarted />
+      <TrustlessCredenza />
       <OrganizationsAndTalentSection />
-      {/* <FooterSection /> */}
+      <FooterSection />
     </main>
   );
 };
